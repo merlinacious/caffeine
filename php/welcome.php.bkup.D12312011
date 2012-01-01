@@ -1,0 +1,59 @@
+<?php
+
+error_reporting(0); 
+include('config.php');
+include('lock.php');
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Bulk Fund </title>
+</head>
+
+<?php $maxdate = mysql_query("SELECT max(datestamp) FROM history") or die(mysql_error())?>
+
+<body>
+<h1>Welcome <?php echo $login_session; ?></h1> 
+
+<?php
+// outputs e.g.  somefile.txt was last modified: December 29 2002 22:16:23.
+
+//$filename = '/hedge/lastupdate';
+
+if (file_exists($filename)) {
+	echo $filename;
+    echo "$filename was last modified: " . date ("F d Y H:i:s.", filemtime($filename));
+}
+?>
+
+
+
+<h2><a href="all.php">View by Client Name</a></h2>
+<h2><a href="database.php">View by Latest Date</a> 
+<?php
+// Make a MySQL Connection
+
+$query = "SELECT MAX(datestamp) FROM history"; 
+$result = mysql_query($query) or die(mysql_error());
+
+// Print out result
+while($row = mysql_fetch_array($result)){
+	echo "The max date in the DB is " .$row['MAX(datestamp)'];
+	echo "<br />";
+}
+?></h2>
+<h2><a href="search.php">Search for Client Name</a></h2>
+
+
+
+*** Don't use the FORCE process below unless you have checked the data @ NSE to be the right date *** <br/>
+*** If the data @ NSE  is the latest date & it is not present in our DB, then hit PROCESS *** <br/>
+*** FORCE PROCESS is only for Namit to use in case something goes wrong *** <br/>
+<h3><a href="http://www.nse-india.com/content/equities/bulk.csv" target="_blank">Check data @ NSE</a></h3>
+<h3><a href="/hedge/scripts/process.pl" target="_blank">Click here </a> to Process latest bulk file from NSE</h3>
+<h3><a href="/hedge/scripts/forceprocess.pl" target="_blank">Click here </a> to FORCE process latest bulk file from NSE.</h3>
+<h2><a href="logout.php">Sign Out</a></h2>
+</body>
+</html>
