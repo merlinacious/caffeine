@@ -36,7 +36,7 @@ include('lock.php');
 		<h1><font COLOR="#FFC401"><b>CA</b></font>f<font COLOR="#FFC401"><b>FEI</b></font>n<font COLOR="#FFC401"><b>E</b></font> - <font COLOR="#FFC401"><b>C</b></font>ollective <font COLOR="#FFC401"><b>A</b></font>utomated <font COLOR="#FFC401"><b>F</b></font>inanc<font COLOR="#FFC401"><b>E</b></font> <font COLOR="#FFC401"><b>I</b></font>d<font COLOR="#FFC401"><b>E</b></font>as</h1>
 			<ul id="menu">
 				<li class="active"><a href="#">Bulk Deals</a></li>
-				<li><a href="#">Future Project2</a></li>
+				<li><a href="#">Portfolio Hedge</a></li>
 				<li><a href="#">Future Project3</a></li>
 			</ul>		
 		
@@ -48,7 +48,7 @@ include('lock.php');
 			<div id="sidebar">
 				<h1>Database Functions</h1>
 				<ul>
-					<li><a href="#">Data model diagram</a></li>
+					<li><a href="/hedge/images/bulk_datamodel.png" target="_blank">Data model diagram</a></li>
 					<li><a href="#">Query for bulk by Client Name</a></li>
 					<li><a href="#">Query for bulk by Latest Date</a></li>
 					<li><a href="#">Query for prices by Client Name</a></li>
@@ -65,6 +65,12 @@ include('lock.php');
 					*** If the data @ NSE  is the latest date & it is not present in our DB, then hit PROCESS *** 
 					*** FORCE PROCESS is only for Namit to use in case something goes wrong *** -->
 				</ul>
+				<h1>Mockups</h1>
+				<ul>
+					<li><a href="/hedge/images/mockups/page1.png" target="_blank">Login</a></li>
+					<li><a href="/hedge/images/mockups/page2.png" target="_blank">Bulk Deals</a></li>
+					<li><a href="/hedge/images/mockups/page3.png" target="_blank">Portfolio Hedge</a></li>
+				</ul>	
 			</div>		
 		</aside>
 		<article>
