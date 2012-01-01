@@ -51,7 +51,7 @@ body{
 #content{ 
 	 background: #fff;
 	 margin: 25px 30px 0 30px; 		
-	 min-height: 600px;
+	 min-height: 750px;
 	 padding: 25px 20px;
 	
 	/* Shadow line */
@@ -61,9 +61,9 @@ body{
 }
 
 #content h1{ 
-	background: #000;
-	color: #fff; 
-	font-weight: normal;
+	background: #C3C6C6;
+	color: #000; 
+	font-weight: bold;
 	margin: 0 0 10px 0;
 	padding: 12px 12px 12px 20px;
 
